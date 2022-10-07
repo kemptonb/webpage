@@ -51,18 +51,46 @@ const Skills = () => {
 
         
 
-        <motion.div className="app__skills-exp">
-            {experience.map((exp, index) => (
+        {/* <motion.div className="app__skills-exp">
+            {?((?) => (
               <motion.div
-                className="app__skills-exp-item"
-                key={exp.year + index}
+                ?
               >
-                {console.log(exp)}
-                <div className="app__skills-exp-year">
-                  <p className="bold-text">{exp.year}</p>
-                </div>
+                ?
 
-                <motion.div className="app__skills-exp-works">
+                <?>
+                  {?((?) => (
+                    <>
+
+                    ?
+
+                    <ReactTooltip
+                      id={work.name}
+                      effect="solid"
+                      arrowColor='#fff'
+                      className="skills-tooltip"  
+                    >
+                      {work.desc}
+                    </ReactTooltip>
+
+                    </>
+                  ))}
+                </?>
+              </motion.div>
+            ))}
+        </motion.div> */}
+        
+        <motion.div>
+          {experience?.map((exp, index) => (
+            <motion.div
+            className='app__skills-exp-item'
+            key={exp.year + index}
+            >
+            <div className='app__skills-exp-year'>
+              <p className='bold-text'>{exp.year}</p>
+            </div>
+            
+            <motion.div className='app__skills-exp-works'>
                   {exp.works.map((work) => (
                     <>
                     <motion.div
@@ -73,9 +101,10 @@ const Skills = () => {
                       data-for={work.name}
                       key={work.name}
                     >
-                      <h3 className="bold-text">{work.name}</h3>
-                      <p className="p-text">{work.company}</p>
+                    <h3 className='bold-text'>{work.name}</h3>
+                    <p className='p-text'>{work.company}</p>
                     </motion.div>
+
                     <ReactTooltip
                       id={work.name}
                       effect="solid"
@@ -84,12 +113,17 @@ const Skills = () => {
                     >
                       {work.desc}
                     </ReactTooltip>
+
                     </>
-                  ))}
-                </motion.div>
-              </motion.div>
-            ))}
+                  ))} 
+            </motion.div>
+
+
+            </motion.div>
+          ))}
         </motion.div>
+
+
       </div>
     </>
   )
